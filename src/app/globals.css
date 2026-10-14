@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FAF8F5;
+  --foreground: #121316;
+  --brand-red: #D9232D;
+  --brand-red-dark: #B81922;
+  --charcoal: #121316;
+  --cream-50: #FCFBF9;
+  --cream-100: #FAF8F5;
+  --cream-200: #F4EFEA;
+  --cream-300: #ECE5DD;
+  --border-subtle: #E8E2D9;
+}
+
+@layer base {
+  * {
+    border-color: #E8E2D9;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--background);
+    color: var(--foreground);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::selection {
+    background-color: #FEE2E2;
+    color: #8A1218;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Accessible focus styling */
+:focus-visible {
+  outline: 2px solid #D9232D;
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
